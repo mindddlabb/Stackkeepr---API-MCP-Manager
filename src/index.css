@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  :root {
+    --bg-main: #000000;
+    --bg-card: #09090b;
+    --bg-card-hover: #121215;
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.2);
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --accent-emerald: #10b981;
+    --accent-cyan: #06b6d4;
+    --accent-purple: #8b5cf6;
+  }
+
+  .light-theme {
+    --bg-main: #fcfcfd;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f4f4f5;
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --border-strong: rgba(0, 0, 0, 0.16);
+    --text-primary: #09090b;
+    --text-secondary: #666666;
+  }
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  letter-spacing: -0.01em;
+}
+
+/* Suga.app Exact Typography Hierarchy Classes */
+.text-hierarchy-84 {
+  font-size: clamp(38px, 7vw, 84px);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.text-hierarchy-56 {
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+.text-hierarchy-40 {
+  font-size: clamp(24px, 4vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+.text-hierarchy-18 {
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.text-hierarchy-16 {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.text-hierarchy-14 {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Suga.app Minimal Grid Background */
+.suga-grid-bg {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.light-theme .suga-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Suga Dot Matrix Wave Background */
+.suga-dot-bg {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.light-theme .suga-dot-bg {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+}
+
+/* Glass & Glow utilities for suga.app visual style */
+.suga-glass {
+  background: rgba(9, 9, 11, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.light-theme .suga-glass {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.suga-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.75rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.suga-card:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-strong);
+}
+
+/* Pill buttons matching suga.app */
+.btn-suga-white {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 500;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 14px;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  items-center: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-suga-white:hover {
+  background-color: #e4e4e7;
+  transform: translateY(-1px);
+}
+
+.btn-suga-dark {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #d4d4d8;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  font-family: 'Geist Mono', monospace;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-suga-dark:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.96); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+

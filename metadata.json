@@ -1,0 +1,6 @@
+{
+  "name": "StackKeeper - API & MCP Manager",
+  "description": "Subscription manager for codebase external dependencies, real-time analytics, user authentication, and secure endpoint & MCP management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
